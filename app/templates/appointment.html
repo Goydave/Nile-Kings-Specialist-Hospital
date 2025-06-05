@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Book an Appointment</h2>
+  <form action="{{ url_for('main.appointment') }}" method="POST">
+    <div>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" required>
+    </div>
+
+    <div>
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <div>
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+
+    <div>
+      <label for="message">Additional Notes:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit">Book Appointment</button>
+  </form>
+</div>
+{% endblock %}

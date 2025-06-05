@@ -1,0 +1,382 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="main-heading">Welcome to Nile Kings Specialist Hospital</h1>
+<p class="lead text-center">Excellence in healthcare, compassion in service.</p>
+
+<!-- Hero Image -->
+<div class="hero-section">
+  <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Hospital Hero" class="img-fluid w-100 hero-img">
+</div>
+
+<!-- Vertical "Get Free Assessment" box -->
+<div class="assessment-box text-center">
+  <p>Get<br>Free<br>Assessment</p>
+</div>
+
+<!-- Info Section with Blue Background -->
+<section class="info-section bg-blue text-white py-4">
+  <div class="container">
+    <div class="row text-center">
+     <!-- Doctors, Location, and Contact Section -->
+<div class="info-section text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <i class="fas fa-user-md fa-2x mb-2"></i>
+        <h5>Our Doctors</h5>
+        <p>Experienced & Certified</p>
+      </div>
+      <div class="col-md-4 border-left border-right">
+        <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+        <h5><a href="https://www.google.com/maps" target="_blank" class="text-white text-decoration-none">Our Location</a></h5>
+        <p>NIMRA TALATA RD</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-phone fa-2x mb-2"></i>
+        <h5>Call Us</h5>
+        <p>+211 915 656 562</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<hr class="my-4">
+
+<div class="text-center section-break-message">
+    <p class="mb-0">Your health is our priority – trusted care you can count on.</p>
+</div>
+
+<hr class="my-4">
+
+
+<!-- Emergency Info Bar -->
+<div class="emergency-bar container my-4 p-3 text-white rounded">
+    <h5 class="mb-1">🚑 Emergency 24/7</h5>
+    <p class="mb-0">Fully equipped with cutting-edge equipment and board-certified experts to provide you with urgent care when you need it most.</p>
+</div>
+
+<section class="services-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row g-4">
+      <!-- 1 -->
+      <div class="col-md-4">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">🩺</div>
+          <h5>Specialized Consultations</h5>
+          <p>Get personalized advice from expert doctors across various specialties.</p>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="col-md-4">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">🚨</div>
+          <h5>Emergency Care</h5>
+          <p>24/7 medical response equipped to handle urgent health conditions.</p>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="col-md-4">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">🤰</div>
+          <h5>Maternity</h5>
+          <p>Comprehensive maternal care for safe delivery and prenatal support.</p>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="col-md-4">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">👶</div>
+          <h5>Pediatrics</h5>
+          <p>Dedicated healthcare for children from birth through adolescence.</p>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="col-md-4">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">❤️</div>
+          <h5>Cardiology</h5>
+          <p>Expert heart care services with advanced diagnostics and treatment.</p>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="col-md-4">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">💊</div>
+          <h5>Pharmacy</h5>
+          <p>Full-service pharmacy offering prescribed medications and guidance.</p>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="col-md-4 mx-auto">
+        <div class="service-card text-center p-4 shadow-sm rounded">
+          <div class="service-icon mb-3">🔪</div>
+          <h5>Surgical Services</h5>
+          <p>High-standard surgical care in a safe and sterile environment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors Section -->
+<section class="doctors-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Meet Our Specialists</h2>
+    
+    <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- First Slide -->
+        <div class="carousel-item active">
+          <div class="row">
+            <!-- Doctor 1 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. James">
+                <h5>Dr. James Okello</h5>
+                <p class="text-muted mb-0">Cardiologist</p>
+              </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/women/21.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Grace">
+                <h5>Dr. Grace Nabirye</h5>
+                <p class="text-muted mb-0">Pediatrician</p>
+              </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/men/31.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Peter">
+                <h5>Dr. Peter Mulondo</h5>
+                <p class="text-muted mb-0">Orthopedic Surgeon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Slide -->
+        <div class="carousel-item">
+          <div class="row">
+            <!-- Doctor 4 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/women/41.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Linda">
+                <h5>Dr. Linda Nakato</h5>
+                <p class="text-muted mb-0">Gynecologist</p>
+              </div>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/men/51.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Michael">
+                <h5>Dr. Michael Sserugo</h5>
+                <p class="text-muted mb-0">Emergency Medicine</p>
+              </div>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/men/61.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Isaac">
+                <h5>Dr. Isaac Bukenya</h5>
+                <p class="text-muted mb-0">ENT Specialist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Slide -->
+        <div class="carousel-item">
+          <div class="row">
+            <!-- Doctor 7 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/women/71.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Rebecca">
+                <h5>Dr. Rebecca Nansubuga</h5>
+                <p class="text-muted mb-0">Dermatologist</p>
+              </div>
+            </div>
+
+            <!-- Doctor 8 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/men/81.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Allan">
+                <h5>Dr. Allan Mwesigwa</h5>
+                <p class="text-muted mb-0">Radiologist</p>
+              </div>
+            </div>
+
+            <!-- Doctor 9 -->
+            <div class="col-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/men/91.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Samuel">
+                <h5>Dr. Samuel Kagimu</h5>
+                <p class="text-muted mb-0">Urologist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fourth Slide -->
+        <div class="carousel-item">
+          <div class="row">
+            <!-- Doctor 10 -->
+            <div class="col-md-4 offset-md-4">
+              <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
+                <img src="https://randomuser.me/api/portraits/women/83.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Joy">
+                <h5>Dr. Joy Ayebare</h5>
+                <p class="text-muted mb-0">General Surgeon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Why Choose Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-3 mb-4">
+        <div class="icon-box">
+          <span class="emoji">🩺</span>
+          <h5>Expert Doctors</h5>
+          <p>Board-certified specialists with years of experience in various fields.</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="icon-box">
+          <span class="emoji">🏥</span>
+          <h5>Modern Facilities</h5>
+          <p>Equipped with the latest medical technology and comfort-focused design.</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="icon-box">
+          <span class="emoji">🕐</span>
+          <h5>24/7 Availability</h5>
+          <p>Emergency care around the clock, every day of the week.</p>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="icon-box">
+          <span class="emoji">❤️</span>
+          <h5>Compassionate Care</h5>
+          <p>We treat our patients like family — with kindness, respect, and empathy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">What Our Patients Say</h2>
+    <div class="row g-4">
+
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="testimonial-card shadow p-4 rounded">
+          <div class="d-flex align-items-center mb-3">
+            <img src="{{ url_for('static', filename='images/image2.jpg') }}" class="rounded-circle me-3" width="50" height="50" alt="Patient 1">
+            <div>
+              <h6 class="mb-0">Sarah N.</h6>
+              <small class="text-muted">Emergency Care</small>
+            </div>
+          </div>
+          <p>"The doctors here truly saved my life. Quick, professional, and caring — I couldn’t ask for better care."</p>
+          <div class="stars text-warning">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="testimonial-card shadow p-4 rounded">
+          <div class="d-flex align-items-center mb-3">
+            <img src="{{ url_for('static', filename='images/image1.jpg') }}" class="rounded-circle me-3" width="50" height="50" alt="Patient 2">
+            <div>
+              <h6 class="mb-0">James K.</h6>
+              <small class="text-muted">Pediatric Services</small>
+            </div>
+          </div>
+          <p>"My child was treated with such kindness and care. Nile Kings is truly a hospital for the people."</p>
+          <div class="stars text-warning">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="testimonial-card shadow p-4 rounded">
+          <div class="d-flex align-items-center mb-3">
+            <img src="{{ url_for('static', filename='images/image3.jpg') }}" class="rounded-circle me-3" width="50" height="50" alt="Patient 3">
+            <div>
+              <h6 class="mb-0">Rebecca M.</h6>
+              <small class="text-muted">Surgical Services</small>
+            </div>
+          </div>
+          <p>"State-of-the-art equipment and highly professional surgeons. I felt safe every step of the way."</p>
+          <div class="stars text-warning">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer mt-5 py-4">
+  <div class="container text-center text-white">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>Contact Us</h5>
+        <p>📍 Niles Kings Specialist Hospital<br>123 Health Ave, Juba, South Sudan</p>
+        <p>📞 +211 915 656 562 </p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='images/logo-footer.png') }}" alt="Nile Kings Logo" class="footer-logo mb-2">
+        <p class="small mt-2">Excellence in healthcare, compassion in service.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Opening Hours</h5>
+        <p>🕒 Mon - Fri: 8:00 AM - 8:00 PM</p>
+        <p>🕒 Sat - Sun: 9:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Custom Logo Text Rendering (No image) -->
+    <div class="footer-logo-text mt-4">
+      <div class="crown">👑</div>
+      <h2 class="hospital-name">NILE KINGS<br><span>SPECIALIST</span></h2>
+      <div class="hospital-sub">— HOSPITAL —</div>
+    </div>
+
+    <hr style="background-color: rgba(255,255,255,0.2);">
+    <p class="mt-3 mb-0">&copy; 2025 Niles Kings Specialist Hospital. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+{% endblock %}

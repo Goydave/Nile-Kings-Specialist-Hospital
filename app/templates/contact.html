@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">Contact Us</h2>
+  
+  <div class="row gy-4">
+    <!-- Google Map Embed -->
+    <div class="col-md-6">
+      <h5>Our Location</h5>
+      <p>
+        Nile Kings Specialist Hospital<br>
+        Nimra Talata, Juba, South Sudan
+      </p>
+      <div class="ratio ratio-16x9 mb-3">
+        <!-- Embedded map pointing to “Nile Kings Specialist Hospital” in Juba -->
+        <iframe
+          src="https://www.google.com/maps?q=Nile+Kings+Specialist+Hospital+Juba&output=embed"
+          style="border:0;" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
+      <p class="small text-muted">(Click the map to open in Google Maps)</p>
+    </div>
+    
+    <!-- Click-to-Call Button -->
+    <div class="col-md-6 text-center d-flex flex-column justify-content-center">
+      <h5>Call Us Directly</h5>
+      <p class="fs-4">
+        <!-- Click this button on mobile to start a call -->
+        <a href="tel:+211919409533" class="btn btn-primary btn-lg">
+          📞 +211 915 656 562
+        </a>
+      </p>
+      <p class="mt-3">
+        Our lines are open <strong>24/7</strong> for emergencies and appointments.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer mt-5 py-4">
+  <div class="container text-center text-white">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>Contact Us</h5>
+        <p>📍 Niles Kings Specialist Hospital<br>123 Health Ave, Juba, South Sudan</p>
+        <p>📞 +211 915 656 562 </p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='images/logo-footer.png') }}" alt="Nile Kings Logo" class="footer-logo mb-2">
+        <p class="small mt-2">Excellence in healthcare, compassion in service.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Opening Hours</h5>
+        <p>🕒 Mon - Fri: 8:00 AM - 8:00 PM</p>
+        <p>🕒 Sat - Sun: 9:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Custom Logo Text Rendering (No image) -->
+    <div class="footer-logo-text mt-4">
+      <div class="crown">👑</div>
+      <h2 class="hospital-name">NILE KINGS<br><span>SPECIALIST</span></h2>
+      <div class="hospital-sub">— HOSPITAL —</div>
+    </div>
+
+    <hr style="background-color: rgba(255,255,255,0.2);">
+    <p class="mt-3 mb-0">&copy; 2025 Niles Kings Specialist Hospital. All Rights Reserved.</p>
+  </div>
+</footer>
+
+{% endblock %}
