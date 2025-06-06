@@ -12,3 +12,4 @@ class Appointment(db.Model):
     time = db.Column(db.String(50), nullable=False)
     message = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+

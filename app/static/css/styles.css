@@ -1,3 +1,18 @@
+.navbar-nav .nav-link {
+    color: #0c2b4b !important;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #009688 !important;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+}
+
+
 /* Ensure body has no margin that interferes */
 body {
     margin: 0;
