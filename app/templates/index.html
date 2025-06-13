@@ -153,8 +153,8 @@
             <!-- Doctor 3 -->
             <div class="col-md-4">
               <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
-                <img src="https://randomuser.me/api/portraits/men/31.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Peter">
-                <h5>Dr. Peter Mulondo</h5>
+                <img src="{{ url_for('static', filename='images/e.jpg') }}" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Peter">
+                <h5>Dr. Eugene Milliano</h5>
                 <p class="text-muted mb-0">Orthopedic Surgeon</p>
               </div>
             </div>
@@ -167,8 +167,8 @@
             <!-- Doctor 4 -->
             <div class="col-md-4">
               <div class="doctor-card p-3 text-center shadow-sm bg-white rounded">
-                <img src="https://randomuser.me/api/portraits/women/41.jpg" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Linda">
-                <h5>Dr. Linda Nakato</h5>
+                <img src= "{{ url_for('static', filename='images/a.jpg') }}" class="rounded-circle mb-3" width="100" height="100" alt="Dr. Linda">
+                <h5>Dr. Akol Madol</h5>
                 <p class="text-muted mb-0">Gynecologist</p>
               </div>
             </div>
@@ -284,6 +284,52 @@
           <span class="emoji">❤️</span>
           <h5>Compassionate Care</h5>
           <p>We treat our patients like family — with kindness, respect, and empathy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent News Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-4">📰 Recent News</h2>
+    <p class="text-center lead mb-5">Stay updated with our latest news, achievements, and health tips.</p>
+    
+    <div class="row g-4">
+      <!-- News Item 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="{{ url_for('static', filename='images/4.jpg') }}" class="card-img-top" alt="Health Outreach">
+          <div class="card-body">
+            <h5 class="card-title">🏥 Free Health Camp</h5>
+            <p class="card-text">We successfully held a free health camp for over 500 patients in rural Uganda. Thank you to our dedicated staff!</p>
+            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Item 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="{{ url_for('static', filename='images/5.jpg') }}" class="card-img-top" alt="New Equipment">
+          <div class="card-body">
+            <h5 class="card-title">🧪 New Diagnostic Equipment</h5>
+            <p class="card-text">We’ve upgraded our radiology and laboratory facilities with the latest diagnostic machines.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- News Item 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="{{ url_for('static', filename='images/6.jpg') }}" class="card-img-top" alt="Health Tips">
+          <div class="card-body">
+            <h5 class="card-title">💡 Tips for a Healthy Heart</h5>
+            <p class="card-text">Our cardiology department shares 5 simple daily tips to keep your heart healthy and strong.</p>
+            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+          </div>
         </div>
       </div>
     </div>
