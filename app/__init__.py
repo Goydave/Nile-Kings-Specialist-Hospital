@@ -5,7 +5,7 @@ def create_app():
     app = Flask(__name__)
 
     # App configuration
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///appointment.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://hospital_db_nr3a_user:rADDw6XhqeMeOWUztj7uTVWTlOGmwze1@dpg-d17b8b8dl3ps73a8o2sg-a/hospital_db_nr3a'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'your-secret-key'  # Optional, useful for forms/flash messages
 
