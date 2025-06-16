@@ -65,7 +65,7 @@ def admin_appointments():
     appointments = Appointment.query.order_by(Appointment.created_at.desc()).all()
     return render_template('admin_appointments.html', appointments=appointments)
 
-@main.route('/init-db')
-def init_db():
-    db.create_all()
-    return "PostgreSQL tables have been created!"
+# @main.route('/init-db')
+# def init_db():
+    #db.create_all()
+    #return "PostgreSQL tables have been created!"
