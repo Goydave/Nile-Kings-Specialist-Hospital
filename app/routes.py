@@ -19,9 +19,6 @@ def about():
 def departments():
     return render_template('departments.html')
 
-@main.route('/doctors')
-def doctors():
-    return render_template('doctors.html')
 
 @main.route('/services')
 def services():
@@ -67,3 +64,8 @@ def contact():
 def admin_appointments():
     appointments = Appointment.query.order_by(Appointment.created_at.desc()).all()
     return render_template('admin_appointments.html', appointments=appointments)
+
+@main.route('/init-db')
+def init_db():
+    db.create_all()
+    return "PostgreSQL tables have been created!"
