@@ -43,7 +43,7 @@ export default function ContactPage() {
           <div>
             <div className="mb-8">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221159.5492160912!2d31.11718037307077!3d30.05948381034453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate%2C%20Egypt!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.291583274263!2d31.59738281512462!3d4.838790496925925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1712810db1fdc8e1%3A0xdbe2b1d7d4e127e4!2sNile%20Kings%20Specialist%20Hospital!5e0!3m2!1sen!2sus!4v1628785013148!5m2!1sen!2sus"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
