@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect, type FormEvent } from "react";
 import { Send, Loader2, User, Sparkles } from "lucide-react";
-import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,16 +19,15 @@ export function AiTriageClient() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [parent] = useAutoAnimate();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTo({
-        top: scrollAreaRef.current.scrollHeight,
-        behavior: 'smooth',
-      });
-    }
+    scrollToBottom();
   }, [messages]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -63,7 +61,7 @@ export function AiTriageClient() {
   return (
     <div className="flex flex-col h-full">
       <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
-        <div ref={parent} className="space-y-6">
+        <div className="space-y-6">
             {messages.length === 0 && (
                 <div className="text-center text-muted-foreground p-8">
                     <Sparkles className="mx-auto h-12 w-12 mb-4 text-primary"/>
@@ -106,6 +104,7 @@ export function AiTriageClient() {
                 )}
                 </div>
             ))}
+             <div ref={messagesEndRef} />
             {isLoading && messages.length > 0 && (
                 <div className="flex items-start gap-4 justify-start">
                     <Avatar>
