@@ -1,0 +1,158 @@
+import { Baby, Bone, HeartPulse } from 'lucide-react';
+import type { Department, Doctor, FAQ, Testimonial } from '@/lib/types';
+
+export const departments: Department[] = [
+  {
+    id: 'cardiology',
+    name: 'Cardiology',
+    icon: HeartPulse,
+    description: 'Expert care for heart and vascular conditions. Our team uses advanced technology for diagnosis and treatment.',
+  },
+  {
+    id: 'pediatrics',
+    name: 'Pediatrics',
+    icon: Baby,
+    description: 'Comprehensive healthcare for infants, children, and adolescents. We focus on a family-centered approach.',
+  },
+  {
+    id: 'orthopedics',
+    name: 'Orthopedics',
+    icon: Bone,
+    description: 'Specialized treatment for musculoskeletal issues, including sports injuries and joint replacements.',
+  },
+];
+
+export const doctors: Doctor[] = [
+  {
+    id: 'd1',
+    name: 'Dr. Evelyn Reed',
+    specialty: 'Cardiologist',
+    image: 'https://placehold.co/100x100',
+    bio: 'Dr. Reed is a leading expert in cardiovascular diseases with over 15 years of experience in advanced heart care and surgery.',
+    availability: ['Monday', 'Wednesday', 'Friday'],
+    departmentId: 'cardiology',
+  },
+  {
+    id: 'd2',
+    name: 'Dr. Marcus Thorne',
+    specialty: 'Orthopedic Surgeon',
+    image: 'https://placehold.co/100x100',
+    bio: 'Specializing in sports medicine and joint reconstruction, Dr. Thorne is dedicated to restoring mobility and quality of life.',
+    availability: ['Tuesday', 'Thursday'],
+    departmentId: 'orthopedics',
+  },
+  {
+    id: 'd3',
+    name: 'Dr. Lena Petrova',
+    specialty: 'Pediatrician',
+    image: 'https://placehold.co/100x100',
+    bio: 'Dr. Petrova offers compassionate care for children of all ages, focusing on preventative medicine and developmental health.',
+    availability: ['Monday', 'Tuesday', 'Thursday', 'Friday'],
+    departmentId: 'pediatrics',
+  },
+  {
+    id: 'd4',
+    name: 'Dr. Samuel Chen',
+    specialty: 'Cardiologist',
+    image: 'https://placehold.co/100x100',
+    bio: 'Dr. Chen is renowned for his work in interventional cardiology and has pioneered several minimally invasive techniques.',
+    availability: ['Tuesday', 'Wednesday'],
+    departmentId: 'cardiology',
+  },
+  {
+    id: 'd5',
+    name: 'Dr. Aisha Khan',
+    specialty: 'Orthopedic Specialist',
+    image: 'https://placehold.co/100x100',
+    bio: 'Dr. Khan focuses on spinal disorders and corrective surgery, helping patients regain function and live pain-free.',
+    availability: ['Monday', 'Friday'],
+    departmentId: 'orthopedics',
+  },
+  {
+    id: 'd6',
+    name: 'Dr. Benjamin Carter',
+    specialty: 'Pediatric Neurologist',
+    image: 'https://placehold.co/100x100',
+    bio: 'An expert in pediatric neurology, Dr. Carter provides care for complex neurological conditions in children.',
+    availability: ['Wednesday', 'Thursday'],
+    departmentId: 'pediatrics',
+  },
+  {
+    id: 'd7',
+    name: 'Dr. Isabella Rossi',
+    specialty: 'Cardiologist',
+    image: 'https://placehold.co/100x100',
+    bio: 'Dr. Rossi specializes in heart failure and transplantation, combining clinical expertise with a deep commitment to patient well-being.',
+    availability: ['Monday', 'Tuesday', 'Friday'],
+    departmentId: 'cardiology',
+  },
+  {
+    id: 'd8',
+    name: 'Dr. Kenji Tanaka',
+    specialty: 'Orthopedic Surgeon',
+    image: 'https://placehold.co/100x100',
+    bio: 'Dr. Tanaka is a specialist in hand and upper extremity surgery, known for his precision and innovative surgical solutions.',
+    availability: ['Tuesday', 'Wednesday', 'Thursday'],
+    departmentId: 'orthopedics',
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    quote: 'The care I received at Nile King’s was exceptional. The doctors and staff were professional and compassionate, making my recovery smooth and comfortable.',
+    name: 'Fatima Al-Sayed',
+    role: 'Patient',
+    image: 'https://placehold.co/80x80',
+  },
+  {
+    quote: 'Booking an appointment through the website was incredibly easy and efficient. The AI Triage tool gave me confidence I was seeing the right specialist.',
+    name: 'David Chen',
+    role: 'Patient',
+    image: 'https://placehold.co/80x80',
+  },
+  {
+    quote: 'As a parent, I entrust my children\'s health to Dr. Petrova. The pediatric department is world-class, and the facilities are state-of-the-art.',
+    name: 'Sarah Johnson',
+    role: 'Parent',
+    image: 'https://placehold.co/80x80',
+  },
+  {
+    quote: 'The orthopedic surgery performed by Dr. Thorne was a great success. I am back on my feet and grateful for the expert care I received.',
+    name: 'Ahmed Hassan',
+    role: 'Patient',
+    image: 'https://placehold.co/80x80',
+  },
+];
+
+export const faqs: FAQ[] = [
+  {
+    id: 'faq1',
+    question: 'How do I book an appointment?',
+    answer: 'You can book an appointment directly through our website by visiting the "Book Appointment" page. Fill out the form with your details, preferred doctor, and date. Our team will confirm your booking via email.',
+  },
+  {
+    id: 'faq2',
+    question: 'What are the hospital’s visiting hours?',
+    answer: 'General visiting hours are from 11:00 AM to 8:00 PM daily. However, visiting hours may vary by department. Please check with the specific department for their policies.',
+  },
+  {
+    id: 'faq3',
+    question: 'Can I access my medical records online?',
+    answer: 'Yes, registered patients can access their medical records, prescriptions, and test results through our secure Patient Portal. You can sign up or log in from the main menu.',
+  },
+  {
+    id: 'faq4',
+    question: 'What insurance plans do you accept?',
+    answer: 'We accept a wide range of national and international insurance plans. For a detailed list, please visit our "Insurance & Billing" page or contact our administrative office.',
+  },
+  {
+    id: 'faq5',
+    question: 'What should I do in case of a medical emergency?',
+    answer: 'For any medical emergency, please proceed to our Emergency Department, which is open 24/7. Or, call our emergency hotline at [Hospital Emergency Number].',
+  },
+  {
+    id: 'faq6',
+    question: 'How does the AI Triage Tool work?',
+    answer: 'Our AI Triage Tool is a chatbot designed to help you identify the right department or specialist based on your symptoms. Simply describe your condition, and the AI will provide a recommendation. Please note, this is not a substitute for a professional medical diagnosis.',
+  },
+];
