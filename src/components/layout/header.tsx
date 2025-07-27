@@ -11,8 +11,10 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/doctors", label: "Doctors" },
   { href: "/book-appointment", label: "Book Appointment" },
+  { href: "/contact", label: "Contact" },
   { href: "/faq", label: "FAQ" },
   { href: "/ai-triage", label: "AI Triage" },
 ];
@@ -56,7 +58,7 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
-                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                <SheetTitle className="sr-only">Navigation</SheetTitle>
                 <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
                   <NileCareLogo className="h-8 w-8 text-primary" />
                   <span className="font-bold font-headline text-lg">NileCare</span>
