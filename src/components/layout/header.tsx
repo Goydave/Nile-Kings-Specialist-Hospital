@@ -5,7 +5,7 @@ import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { NileCareLogo } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
@@ -56,6 +56,7 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
                   <NileCareLogo className="h-8 w-8 text-primary" />
                   <span className="font-bold font-headline text-lg">NileCare</span>
