@@ -1,16 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Stethoscope, Microscope, ShieldCheck, UserMd, HeartPulse, Hospital, Brain, Bone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { departments, doctors, testimonials } from "@/lib/data";
+import { departments, doctors, testimonials, blogPosts } from "@/lib/data";
 import { Doctor } from "@/lib/types";
 
 function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
-    <Card className="overflow-hidden text-center h-full flex flex-col">
+    <Card className="overflow-hidden text-center h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
       <Image
         src={doctor.image}
         alt={`Dr. ${doctor.name}`}
@@ -34,6 +34,29 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
 }
 
 export default function Home() {
+  const whyChooseUs = [
+    {
+      icon: Stethoscope,
+      title: "Advanced Technology",
+      description: "We use the latest medical technology for accurate diagnosis and effective treatment."
+    },
+    {
+      icon: UserMd,
+      title: "Experienced Doctors",
+      description: "Our team consists of highly skilled and experienced medical professionals."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Patient-Centered Care",
+      description: "Your health and comfort are our top priorities. We provide personalized care for every patient."
+    },
+    {
+        icon: Hospital,
+        title: "Modern Facilities",
+        description: "Our hospital is equipped with state-of-the-art facilities to ensure the best possible care."
+    }
+  ];
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -60,8 +83,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Departments Section */}
+      {/* Why Choose Us Section */}
       <section className="py-16 lg:py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">Why Choose NileCare?</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Committed to providing the best healthcare services for you and your family.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 border-t-4 border-primary">
+                <CardHeader>
+                  <div className="mx-auto bg-primary/10 rounded-full h-16 w-16 flex items-center justify-center mb-4">
+                    <item.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-xl">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Departments Section */}
+      <section className="py-16 lg:py-24 bg-card">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Departments</h2>
@@ -88,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* Featured Doctors Section */}
-      <section className="py-16 lg:py-24 bg-card">
+      <section className="py-16 lg:py-24 bg-background">
          <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-headline font-bold">Meet Our Experts</h2>
@@ -114,6 +164,36 @@ export default function Home() {
               <Link href="/doctors">View All Doctors</Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+       {/* Our Gallery Section */}
+      <section className="py-16 lg:py-24 bg-card">
+        <div className="container">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Gallery</h2>
+                <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+                    A glimpse into our state-of-the-art facilities and patient-centric environment.
+                </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid gap-4">
+                    <Image data-ai-hint="hospital room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Room"/>
+                    <Image data-ai-hint="medical equipment" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Medical Equipment"/>
+                </div>
+                 <div className="grid gap-4">
+                    <Image data-ai-hint="hospital hallway" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Hospital Hallway"/>
+                    <Image data-ai-hint="surgery room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Surgery Room"/>
+                </div>
+                 <div className="grid gap-4">
+                    <Image data-ai-hint="reception desk" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Reception Desk"/>
+                    <Image data-ai-hint="patient care" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Patient Care"/>
+                </div>
+                 <div className="grid gap-4">
+                    <Image data-ai-hint="laboratory" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Laboratory"/>
+                    <Image data-ai-hint="hospital exterior" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Exterior"/>
+                </div>
+            </div>
         </div>
       </section>
 
@@ -152,6 +232,43 @@ export default function Home() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
+        </div>
+      </section>
+
+      {/* Health Blog Section */}
+      <section className="py-16 lg:py-24 bg-card">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">Health & Wellness Blog</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+              Stay informed with the latest health tips and news from our experts.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Card key={post.id} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover"
+                  data-ai-hint={post.imageHint}
+                />
+                <CardHeader>
+                  <CardTitle className="font-headline text-xl">{post.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-sm text-muted-foreground mb-4">{post.excerpt}</p>
+                </CardContent>
+                <div className="p-6 pt-0">
+                  <Button asChild variant="link" className="p-0">
+                    <Link href="#">Read More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
       

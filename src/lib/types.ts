@@ -29,3 +29,13 @@ export type FAQ = {
   question: string;
   answer: string;
 };
+
+export type BlogPost = {
+  id: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  imageHint: string;
+  author: string;
+  date: string;
+};

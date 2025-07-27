@@ -1,5 +1,5 @@
 import { Baby, Bone, HeartPulse } from 'lucide-react';
-import type { Department, Doctor, FAQ, Testimonial } from '@/lib/types';
+import type { Department, Doctor, FAQ, Testimonial, BlogPost } from '@/lib/types';
 
 export const departments: Department[] = [
   {
@@ -154,5 +154,35 @@ export const faqs: FAQ[] = [
     id: 'faq6',
     question: 'How does the AI Triage Tool work?',
     answer: 'Our AI Triage Tool is a chatbot designed to help you identify the right department or specialist based on your symptoms. Simply describe your condition, and the AI will provide a recommendation. Please note, this is not a substitute for a professional medical diagnosis.',
+  },
+];
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 'blog1',
+    title: '5 Tips for a Heart-Healthy Diet',
+    excerpt: 'Learn how simple dietary changes can make a big difference for your cardiovascular health.',
+    image: 'https://placehold.co/400x250',
+    imageHint: "healthy food",
+    author: 'Dr. Evelyn Reed',
+    date: '2024-07-15',
+  },
+  {
+    id: 'blog2',
+    title: 'Understanding Common Sports Injuries',
+    excerpt: 'Dr. Thorne discusses common sports injuries, their prevention, and treatment options.',
+    image: 'https://placehold.co/400x250',
+    imageHint: "athlete running",
+    author: 'Dr. Marcus Thorne',
+    date: '2024-07-12',
+  },
+  {
+    id: 'blog3',
+    title: 'Childhood Immunizations: What You Need to Know',
+    excerpt: 'A complete guide to vaccination schedules and their importance for your child\'s health.',
+    image: 'https://placehold.co/400x250',
+    imageHint: "child vaccination",
+    author: 'Dr. Lena Petrova',
+    date: '2024-07-10',
   },
 ];
