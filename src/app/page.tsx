@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Stethoscope, Microscope, ShieldCheck, UserMd, HeartPulse, Hospital, Brain, Bone } from "lucide-react";
+import { ArrowRight, Stethoscope, ShieldCheck, User, HeartPulse, Hospital, Bone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -41,7 +41,7 @@ export default function Home() {
       description: "We use the latest medical technology for accurate diagnosis and effective treatment."
     },
     {
-      icon: UserMd,
+      icon: User,
       title: "Experienced Doctors",
       description: "Our team consists of highly skilled and experienced medical professionals."
     },
@@ -178,20 +178,20 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="grid gap-4">
-                    <Image data-ai-hint="hospital room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Room"/>
-                    <Image data-ai-hint="medical equipment" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Medical Equipment"/>
+                    <Image data-ai-hint="hospital room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Room" width={500} height={700}/>
+                    <Image data-ai-hint="medical equipment" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Medical Equipment" width={500} height={400}/>
                 </div>
                  <div className="grid gap-4">
-                    <Image data-ai-hint="hospital hallway" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Hospital Hallway"/>
-                    <Image data-ai-hint="surgery room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Surgery Room"/>
+                    <Image data-ai-hint="hospital hallway" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Hospital Hallway" width={500} height={400}/>
+                    <Image data-ai-hint="surgery room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Surgery Room" width={500} height={700}/>
                 </div>
                  <div className="grid gap-4">
-                    <Image data-ai-hint="reception desk" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Reception Desk"/>
-                    <Image data-ai-hint="patient care" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Patient Care"/>
+                    <Image data-ai-hint="reception desk" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Reception Desk" width={500} height={700}/>
+                    <Image data-ai-hint="patient care" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Patient Care" width={500} height={400}/>
                 </div>
                  <div className="grid gap-4">
-                    <Image data-ai-hint="laboratory" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Laboratory"/>
-                    <Image data-ai-hint="hospital exterior" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Exterior"/>
+                    <Image data-ai-hint="laboratory" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Laboratory" width={500} height={400}/>
+                    <Image data-ai-hint="hospital exterior" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Exterior" width={500} height={700}/>
                 </div>
             </div>
         </div>
