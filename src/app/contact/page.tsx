@@ -14,7 +14,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone Number',
-      content: '+20 2 1234 5678',
+      content: '+211 915 656 562',
     },
     {
       icon: Mail,

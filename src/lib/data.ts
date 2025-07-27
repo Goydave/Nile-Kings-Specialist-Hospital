@@ -301,7 +301,7 @@ export const faqs: FAQ[] = [
   {
     id: 'faq5',
     question: 'What should I do in case of a medical emergency?',
-    answer: 'For any medical emergency, please proceed to our Emergency Department, which is open 24/7. Or, call our emergency hotline at [Hospital Emergency Number].',
+    answer: 'For any medical emergency, please proceed to our Emergency Department, which is open 24/7. Or, call our emergency hotline at +211 915 656 562.',
   },
   {
     id: 'faq6',
