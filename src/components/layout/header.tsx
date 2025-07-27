@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Hospital } from "lucide-react";
+import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NileCareLogo } from "@/components/icons";
-import { LanguageSwitcher } from "@/components/language-switcher";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -79,7 +78,6 @@ export function Header() {
             </Sheet>
           </div>
           <div className="flex items-center gap-2">
-            <LanguageSwitcher />
             <Button variant="secondary" asChild>
               <Link href="#">Patient Portal</Link>
             </Button>
