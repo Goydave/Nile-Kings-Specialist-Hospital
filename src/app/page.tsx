@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Stethoscope, ShieldCheck, User, HeartPulse, Hospital, Bone } from "lucide-react";
+import { ArrowRight, Stethoscope, ShieldCheck, User, Hospital } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -56,6 +56,50 @@ export default function Home() {
         description: "Our hospital is equipped with state-of-the-art facilities to ensure the best possible care."
     }
   ];
+  
+  const galleryImages = [
+    {
+      src: "https://images.unsplash.com/photo-1631217871316-2a3a551355b2?q=80&w=1974&auto=format&fit=crop",
+      alt: "Modern hospital reception area",
+      hint: "reception desk",
+      colSpan: "col-span-2",
+      rowSpan: "row-span-2",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop",
+      alt: "Bright and clean patient room",
+      hint: "hospital room",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581093583449-c15e21952bdd?q=80&w=2070&auto=format&fit=crop",
+      alt: "Scientist working in a modern laboratory",
+      hint: "laboratory",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+      alt: "Doctor consulting with a patient",
+      hint: "patient care",
+      colSpan: "col-span-2",
+      rowSpan: "row-span-1",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop",
+      alt: "State-of-the-art surgery room",
+      hint: "surgery room",
+      colSpan: "col-span-2",
+      rowSpan: "row-span-2",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1579684385127-6abf9df8ca88?q=80&w=2070&auto=format&fit=crop",
+      alt: "Advanced medical monitoring equipment",
+      hint: "medical equipment",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1551192426-5a075b6c0397?q=80&w=1964&auto=format&fit=crop",
+      alt: "Well-lit hospital hallway",
+      hint: "hospital hallway",
+    },
+];
 
   return (
     <div className="flex flex-col">
@@ -176,23 +220,19 @@ export default function Home() {
                     A glimpse into our state-of-the-art facilities and patient-centric environment.
                 </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="grid gap-4">
-                    <Image data-ai-hint="hospital room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop" alt="Hospital Room" width={500} height={700}/>
-                    <Image data-ai-hint="medical equipment" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1579684385127-6abf9df8ca88?q=80&w=2070&auto=format&fit=crop" alt="Medical Equipment" width={500} height={400}/>
-                </div>
-                 <div className="grid gap-4">
-                    <Image data-ai-hint="hospital hallway" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1551192426-5a075b6c0397?q=80&w=1964&auto=format&fit=crop" alt="Hospital Hallway" width={500} height={400}/>
-                    <Image data-ai-hint="surgery room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop" alt="Surgery Room" width={500} height={700}/>
-                </div>
-                 <div className="grid gap-4">
-                    <Image data-ai-hint="reception desk" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1631217871316-2a3a551355b2?q=80&w=1974&auto=format&fit=crop" alt="Reception Desk" width={500} height={700}/>
-                    <Image data-ai-hint="patient care" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="Patient Care" width={500} height={400}/>
-                </div>
-                 <div className="grid gap-4">
-                    <Image data-ai-hint="laboratory" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1581093583449-c15e21952bdd?q=80&w=2070&auto=format&fit=crop" alt="Laboratory" width={500} height={400}/>
-                    <Image data-ai-hint="hospital exterior" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1613203425596-a8a11e03c68b?q=80&w=2070&auto=format&fit=crop" alt="Hospital Exterior" width={500} height={700}/>
-                </div>
+             <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-4">
+                {galleryImages.map((image, index) => (
+                  <div key={index} className={`${image.colSpan || 'col-span-1'} ${image.rowSpan || 'row-span-1'}`}>
+                      <Image
+                          data-ai-hint={image.hint}
+                          className="h-full w-full object-cover rounded-lg hover:opacity-90 transition-opacity"
+                          src={image.src}
+                          alt={image.alt}
+                          width={500}
+                          height={500}
+                      />
+                  </div>
+              ))}
             </div>
         </div>
       </section>
