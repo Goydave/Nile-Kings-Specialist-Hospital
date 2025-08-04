@@ -66,16 +66,22 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-               <div className="col-span-2">
+                <Image
+                    src="https://images.unsplash.com/photo-1581093583449-c15e21952bdd?q=80&w=2070&auto=format&fit=crop"
+                    alt="Scientist in a lab"
+                    width={300}
+                    height={200}
+                    className="rounded-lg shadow-xl w-full h-auto"
+                    data-ai-hint="scientist lab"
+                />
                  <Image
                     src="https://images.unsplash.com/photo-1562912384-3454b732480a?q=80&w=2070&auto=format&fit=crop"
                     alt="Modern hospital building exterior"
-                    width={600}
-                    height={400}
+                    width={300}
+                    height={200}
                     className="rounded-lg shadow-xl w-full h-auto"
                     data-ai-hint="modern hospital exterior"
                   />
-               </div>
                 <Image
                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
                     alt="Doctor and patient interaction"
