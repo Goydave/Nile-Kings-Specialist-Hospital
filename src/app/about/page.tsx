@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Award, Users, HeartHandshake, Lightbulb } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -64,15 +65,33 @@ export default function AboutPage() {
                 From our humble beginnings, we have grown into a leading healthcare institution in the region, known for our commitment to excellence and our unwavering focus on the well-being of our community.
               </p>
             </div>
-            <div>
-              <Image
-                src="https://images.unsplash.com/photo-1562912384-3454b732480a?q=80&w=2070&auto=format&fit=crop"
-                alt="Modern hospital building exterior"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-xl"
-                data-ai-hint="modern hospital exterior"
-              />
+            <div className="grid grid-cols-2 gap-4">
+               <div className="col-span-2">
+                 <Image
+                    src="https://images.unsplash.com/photo-1562912384-3454b732480a?q=80&w=2070&auto=format&fit=crop"
+                    alt="Modern hospital building exterior"
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-xl w-full h-auto"
+                    data-ai-hint="modern hospital exterior"
+                  />
+               </div>
+                <Image
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
+                    alt="Doctor and patient interaction"
+                    width={300}
+                    height={200}
+                    className="rounded-lg shadow-xl w-full h-auto"
+                    data-ai-hint="doctor patient"
+                />
+                <Image
+                    src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop"
+                    alt="Modern hospital room"
+                    width={300}
+                    height={200}
+                    className="rounded-lg shadow-xl w-full h-auto"
+                    data-ai-hint="hospital room"
+                />
             </div>
           </div>
         </div>
