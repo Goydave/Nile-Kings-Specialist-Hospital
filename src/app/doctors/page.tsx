@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DoctorCard } from "@/components/doctor-card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -6,9 +7,24 @@ import { doctors, departments } from "@/lib/data";
 export default function DoctorsPage() {
   return (
     <div className="bg-card">
+       <section className="relative h-64 bg-primary-foreground">
+        <Image
+            src="https://images.unsplash.com/photo-1579154341569-34f37f37b3b3?q=80&w=2070&auto=format&fit=crop"
+            alt="A team of doctors"
+            layout="fill"
+            objectFit="cover"
+            className="absolute z-0"
+            data-ai-hint="doctors team"
+        />
+        <div className="absolute inset-0 bg-primary/60 z-10" />
+        <div className="container relative z-20 flex h-full items-center justify-center">
+            <h1 className="text-4xl md:text-6xl font-headline font-bold text-white text-center" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                Our Medical Team
+            </h1>
+        </div>
+      </section>
       <div className="container py-12 md:py-20">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-headline font-bold">Our Medical Team</h1>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
             Meet our team of highly qualified and compassionate healthcare professionals.
           </p>
