@@ -33,7 +33,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center text-center text-white">
         <Image
-          src="https://placehold.co/1600x600"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop"
           alt="A diverse group of smiling medical professionals"
           layout="fill"
           objectFit="cover"
@@ -66,7 +66,7 @@ export default function AboutPage() {
             </div>
             <div>
               <Image
-                src="https://placehold.co/600x400"
+                src="https://images.unsplash.com/photo-1562912384-3454b732480a?q=80&w=2070&auto=format&fit=crop"
                 alt="Modern hospital building exterior"
                 width={600}
                 height={400}

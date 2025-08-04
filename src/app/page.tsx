@@ -62,7 +62,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white">
         <Image
-          src="https://placehold.co/1600x900"
+          src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2128&auto=format&fit=crop"
           alt="Modern hospital interior"
           layout="fill"
           objectFit="cover"
@@ -178,20 +178,20 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="grid gap-4">
-                    <Image data-ai-hint="hospital room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Room" width={500} height={700}/>
-                    <Image data-ai-hint="medical equipment" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Medical Equipment" width={500} height={400}/>
+                    <Image data-ai-hint="hospital room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop" alt="Hospital Room" width={500} height={700}/>
+                    <Image data-ai-hint="medical equipment" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1579684385127-6abf9df8ca88?q=80&w=2070&auto=format&fit=crop" alt="Medical Equipment" width={500} height={400}/>
                 </div>
                  <div className="grid gap-4">
-                    <Image data-ai-hint="hospital hallway" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Hospital Hallway" width={500} height={400}/>
-                    <Image data-ai-hint="surgery room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Surgery Room" width={500} height={700}/>
+                    <Image data-ai-hint="hospital hallway" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1551192426-5a075b6c0397?q=80&w=1964&auto=format&fit=crop" alt="Hospital Hallway" width={500} height={400}/>
+                    <Image data-ai-hint="surgery room" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop" alt="Surgery Room" width={500} height={700}/>
                 </div>
                  <div className="grid gap-4">
-                    <Image data-ai-hint="reception desk" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Reception Desk" width={500} height={700}/>
-                    <Image data-ai-hint="patient care" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Patient Care" width={500} height={400}/>
+                    <Image data-ai-hint="reception desk" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1631217871316-2a3a551355b2?q=80&w=1974&auto=format&fit=crop" alt="Reception Desk" width={500} height={700}/>
+                    <Image data-ai-hint="patient care" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="Patient Care" width={500} height={400}/>
                 </div>
                  <div className="grid gap-4">
-                    <Image data-ai-hint="laboratory" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x400" alt="Laboratory" width={500} height={400}/>
-                    <Image data-ai-hint="hospital exterior" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://placehold.co/500x700" alt="Hospital Exterior" width={500} height={700}/>
+                    <Image data-ai-hint="laboratory" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1581093583449-c15e21952bdd?q=80&w=2070&auto=format&fit=crop" alt="Laboratory" width={500} height={400}/>
+                    <Image data-ai-hint="hospital exterior" className="h-auto max-w-full rounded-lg hover:opacity-90 transition-opacity" src="https://images.unsplash.com/photo-1613203425596-a8a11e03c68b?q=80&w=2070&auto=format&fit=crop" alt="Hospital Exterior" width={500} height={700}/>
                 </div>
             </div>
         </div>
