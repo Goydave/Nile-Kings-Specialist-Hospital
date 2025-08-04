@@ -59,7 +59,7 @@ export default function Home() {
   
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1631217871316-2a3a551355b2?q=80&w=1974&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvc3BpdGFsJTIwZXF1aXBtZW50fGVufDB8fDB8fHww",
       alt: "Modern hospital reception area",
       hint: "reception desk",
       colSpan: "col-span-2",
@@ -71,7 +71,7 @@ export default function Home() {
       hint: "hospital room",
     },
     {
-      src: "https://images.unsplash.com/photo-1581093583449-c15e21952bdd?q=80&w=2070&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1559000357-f6b52ddfbe37?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvc3BpdGFsJTIwZXF1aXBtZW50fGVufDB8fDB8fHww",
       alt: "Scientist working in a modern laboratory",
       hint: "laboratory",
     },
@@ -90,12 +90,12 @@ export default function Home() {
       rowSpan: "row-span-2",
     },
     {
-      src: "https://images.unsplash.com/photo-1579684385127-6abf9df8ca88?q=80&w=2070&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1630531210873-2dcfc5a541ff?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QWR2YW5jZWQlMjBtZWRpY2FsJTIwbW9uaXRvcmluZyUyMGVxdWlwbWVudHxlbnwwfHwwfHx8MA%3D%3D",
       alt: "Advanced medical monitoring equipment",
       hint: "medical equipment",
     },
     {
-      src: "https://images.unsplash.com/photo-1551192426-5a075b6c0397?q=80&w=1964&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1629410484397-a4dcd74088a0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9zcGl0YWwlMjBoYWxsd2F5fGVufDB8fDB8fHww",
       alt: "Well-lit hospital hallway",
       hint: "hospital hallway",
     },

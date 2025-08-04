@@ -67,7 +67,7 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <Image
-                    src="https://images.unsplash.com/photo-1581093583449-c15e21952bdd?q=80&w=2070&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1707124760574-077d74fc3784?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG9zcGl0YWwlMjBmYWNpbGl0aWVzJTIwaW1hZ2VzfGVufDB8fDB8fHww"
                     alt="Scientist in a lab"
                     width={300}
                     height={200}
@@ -75,7 +75,7 @@ export default function AboutPage() {
                     data-ai-hint="scientist lab"
                 />
                  <Image
-                    src="https://images.unsplash.com/photo-1562912384-3454b732480a?q=80&w=2070&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1640876777012-bdb00a6323e2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFsY2slMjBkb2N0b3JzfGVufDB8fDB8fHww"
                     alt="Modern hospital building exterior"
                     width={300}
                     height={200}
