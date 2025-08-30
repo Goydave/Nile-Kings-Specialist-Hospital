@@ -75,15 +75,39 @@ export function AppointmentForm() {
 
   async function onSubmit(data: AppointmentFormValues) {
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log(data);
-    setIsLoading(false);
-    toast({
-      title: "Appointment Booked!",
-      description: "Your appointment has been successfully requested. We will contact you shortly for confirmation.",
+
+    // Map form fields to match your database fields
+    const payload = {
+      fullName: data.name,
+      email: data.email,
+      phone: data.phone,
+      department: departments.find(d => d.id === data.departmentId)?.name || "",
+      doctor: doctors.find(d => d.id === data.doctorId)?.name || "",
+      date: data.appointmentDate, // This is a Date object
+      reason: data.message || "",
+    };
+
+    const res = await fetch("/api/appointments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
-    form.reset();
+
+    setIsLoading(false);
+
+    if (res.ok) {
+      toast({
+        title: "Appointment Booked!",
+        description: "Your appointment has been successfully requested. We will contact you shortly for confirmation.",
+      });
+      form.reset();
+    } else {
+      toast({
+        title: "Error",
+        description: "There was a problem booking your appointment. Please try again.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (

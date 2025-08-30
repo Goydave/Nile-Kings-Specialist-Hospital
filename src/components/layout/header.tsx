@@ -84,6 +84,9 @@ export function Header() {
             <Button variant="secondary" asChild>
               <Link href="#">Patient Portal</Link>
             </Button>
+            <Button variant="outline" asChild>
+              <Link href="/admin/login">Admin</Link>
+            </Button>
           </div>
         </div>
       </div>
