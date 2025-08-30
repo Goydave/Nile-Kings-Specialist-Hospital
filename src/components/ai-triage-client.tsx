@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-import { aiTriage } from "@/ai/flows/ai-triage-tool";
+import { simpleAiTriage } from "@/ai/simple-triage";
 
 interface Message {
   role: "user" | "assistant";
@@ -40,7 +40,7 @@ export function AiTriageClient() {
     setIsLoading(true);
 
     try {
-      const response = await aiTriage({ query: input });
+      const response = await simpleAiTriage({ query: input });
       const assistantMessage: Message = {
         role: "assistant",
         content: response.response,

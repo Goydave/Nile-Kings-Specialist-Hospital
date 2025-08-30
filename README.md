@@ -17,7 +17,7 @@ A next-generation, patient-centered digital healthcare platform that combines pr
 - **Styling**: Tailwind CSS, Radix UI Components
 - **Database**: PostgreSQL (Supabase)
 - **ORM**: Prisma
-- **AI**: Google AI (Gemini)
+- **AI**: Simple keyword-based triage system
 - **Deployment**: Vercel
 
 ## Getting Started
@@ -46,10 +46,9 @@ npm install
 cp .env.example .env
 ```
 
-Add your database URL and API keys:
+Add your database URL:
 ```
 DATABASE_URL="postgresql://username:password@host:port/database"
-GOOGLE_AI_API_KEY="your-google-ai-api-key"
 ```
 
 4. Set up the database
@@ -78,7 +77,6 @@ Open [http://localhost:9002](http://localhost:9002) to view the application.
 1. Connect your repository to Vercel
 2. Add environment variables in Vercel dashboard:
    - `DATABASE_URL`
-   - `GOOGLE_AI_API_KEY`
 3. Deploy - the build process will automatically:
    - Run `prisma generate`
    - Build the Next.js application
@@ -88,7 +86,6 @@ Open [http://localhost:9002](http://localhost:9002) to view the application.
 Make sure to set these environment variables in your deployment platform:
 
 - `DATABASE_URL` - Your PostgreSQL connection string
-- `GOOGLE_AI_API_KEY` - Google AI API key for the AI Triage feature
 
 ## Project Structure
 

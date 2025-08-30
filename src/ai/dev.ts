@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/ai-triage-tool.ts';
+// AI triage is now handled by simple-triage.ts
