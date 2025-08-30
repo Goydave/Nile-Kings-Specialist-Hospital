@@ -26,7 +26,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(appointment, { status: 201 });
   } catch (error) {
     console.error('Error creating appointment:', error);
-    return NextResponse.json({ error: 'Failed to create appointment' }, { status: 500 });
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+    });
+    return NextResponse.json({ 
+      error: 'Failed to create appointment',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    }, { status: 500 });
   }
 }
 
