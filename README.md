@@ -111,3 +111,7 @@ src/
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+**Latest Update**: Fixed all deployment issues and removed problematic dependencies for successful Vercel deployment.
