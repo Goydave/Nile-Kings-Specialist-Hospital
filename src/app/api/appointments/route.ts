@@ -4,6 +4,8 @@ import prisma from '@/db/client';
 export async function POST(req: NextRequest) {
   try {
     console.log('Appointment POST request received');
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('Database URL exists:', !!process.env.DATABASE_URL);
     
     const { fullName, email, phone, department, doctor, date, reason } = await req.json();
     console.log('Request data:', { fullName, email, phone, department, doctor, date, reason });
@@ -12,6 +14,14 @@ export async function POST(req: NextRequest) {
     if (!fullName || !email || !phone || !department || !doctor || !date || !reason) {
       console.log('Missing fields detected');
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
+    }
+
+    if (!process.env.DATABASE_URL) {
+      console.error('DATABASE_URL is not set');
+      return NextResponse.json({ 
+        error: 'Database configuration error',
+        details: 'DATABASE_URL environment variable is not set'
+      }, { status: 500 });
     }
 
     console.log('Connecting to database...');
@@ -44,7 +54,11 @@ export async function POST(req: NextRequest) {
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   } finally {
-    await prisma.$disconnect();
+    try {
+      await prisma.$disconnect();
+    } catch (disconnectError) {
+      console.error('Error disconnecting from database:', disconnectError);
+    }
   }
 }
 
