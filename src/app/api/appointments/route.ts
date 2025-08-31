@@ -28,30 +28,22 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    console.log('Creating appointment with raw SQL...');
+    console.log('Creating appointment with direct connection...');
 
-    // Use raw SQL to bypass prepared statement conflicts
-    const result = await writePrisma.$executeRaw`
-      INSERT INTO "Appointment" ("fullName", "email", "phone", "department", "doctor", "date", "reason", "createdAt")
-      VALUES (${fullName}, ${email}, ${phone}, ${department}, ${doctor}, ${new Date(date)}, ${reason}, NOW())
-    `;
-
-    console.log('Appointment created successfully with raw SQL');
-    
-    // Fetch the created appointment to return it
-    const appointment = await writePrisma.appointment.findFirst({
-      where: {
+    // Create new appointment using direct connection
+    const appointment = await writePrisma.appointment.create({
+      data: {
         fullName,
         email,
         phone,
         department,
         doctor,
+        date: new Date(date),
         reason,
       },
-      orderBy: {
-        createdAt: 'desc'
-      }
     });
+
+    console.log('Appointment created successfully:', appointment.id);
 
     return NextResponse.json(appointment, { status: 201 });
   } catch (error) {
