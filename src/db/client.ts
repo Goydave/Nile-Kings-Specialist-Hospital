@@ -18,9 +18,12 @@ const createPrismaClient = () => {
 // Create a new instance for each request in production to avoid prepared statement conflicts
 const getPrismaClient = () => {
   if (process.env.NODE_ENV === 'production') {
-    return createPrismaClient();
+    // Create a completely fresh client for each request
+    const client = createPrismaClient();
+    return client;
   }
   
+  // Use singleton in development
   if (!globalThis.prisma) {
     globalThis.prisma = createPrismaClient();
   }
