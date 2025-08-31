@@ -4,12 +4,17 @@ const createWritePrismaClient = () => {
   // Use direct connection for write operations to avoid Transaction Pooler conflicts
   const writeUrl = process.env.WRITE_DATABASE_URL || process.env.DATABASE_URL;
   
+  console.log('Original write URL:', writeUrl);
+  
   // If using Supabase Transaction Pooler, convert to direct connection
   let directUrl = writeUrl;
   if (writeUrl && writeUrl.includes('pooler.supabase.com:6543')) {
     // Convert from Transaction Pooler to Direct Connection
-    directUrl = writeUrl.replace('pooler.supabase.com:6543', 'db.hbkiniorgxsydllivtzs.supabase.co:5432');
+    directUrl = writeUrl.replace('aws-1-ap-southeast-1.pooler.supabase.com:6543', 'db.hbkiniorgxsydllivtzs.supabase.co:5432');
     directUrl = directUrl.replace('postgres.hbkiniorgxsydllivtzs', 'postgres');
+    console.log('Converted to direct URL:', directUrl);
+  } else {
+    console.log('Using original URL (no conversion needed):', directUrl);
   }
   
   return new PrismaClient({
