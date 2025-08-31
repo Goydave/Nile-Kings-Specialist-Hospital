@@ -1,13 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import getPrismaClient from '@/db/client';
+import getReadPrismaClient from '@/db/read-client';
+import getWritePrismaClient from '@/db/write-client';
 
 export async function POST(req: NextRequest) {
-  const prisma = getPrismaClient();
+  const writePrisma = getWritePrismaClient();
   
   try {
     console.log('Appointment POST request received');
     console.log('Environment:', process.env.NODE_ENV);
     console.log('Database URL exists:', !!process.env.DATABASE_URL);
+    console.log('Write Database URL exists:', !!process.env.WRITE_DATABASE_URL);
     
     const { fullName, email, phone, department, doctor, date, reason } = await req.json();
     console.log('Request data:', { fullName, email, phone, department, doctor, date, reason });
@@ -26,10 +28,10 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    console.log('Creating appointment...');
+    console.log('Creating appointment with write client...');
 
-    // Create new appointment
-    const appointment = await prisma.appointment.create({
+    // Create new appointment using write client
+    const appointment = await writePrisma.appointment.create({
       data: {
         fullName,
         email,
@@ -54,19 +56,18 @@ export async function POST(req: NextRequest) {
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   } finally {
-    if (process.env.NODE_ENV === 'production') {
-      await prisma.$disconnect();
-    }
+    // Always disconnect write client
+    await writePrisma.$disconnect();
   }
 }
 
 export async function GET() {
-  const prisma = getPrismaClient();
+  const readPrisma = getReadPrismaClient();
   
   try {
-    console.log('Fetching appointments...');
+    console.log('Fetching appointments with read client...');
     
-    const appointments = await prisma.appointment.findMany({
+    const appointments = await readPrisma.appointment.findMany({
       orderBy: { createdAt: 'desc' },
     });
 
@@ -84,7 +85,7 @@ export async function GET() {
     }, { status: 500 });
   } finally {
     if (process.env.NODE_ENV === 'production') {
-      await prisma.$disconnect();
+      await readPrisma.$disconnect();
     }
   }
 }
