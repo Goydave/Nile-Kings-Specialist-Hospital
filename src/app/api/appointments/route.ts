@@ -28,9 +28,12 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    console.log('Creating appointment with direct connection...');
+    console.log('Creating appointment with aggressive connection management...');
 
-    // Create new appointment using direct connection
+    // Explicitly connect and disconnect for each operation
+    await writePrisma.$connect();
+    
+    // Create new appointment
     const appointment = await writePrisma.appointment.create({
       data: {
         fullName,
