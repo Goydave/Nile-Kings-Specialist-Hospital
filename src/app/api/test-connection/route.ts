@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/db/client';
+import getPrismaClient from '@/db/client';
 
 export async function GET() {
+  const prisma = getPrismaClient();
+  
   try {
     console.log('Testing database connection...');
     console.log('Environment:', process.env.NODE_ENV);
@@ -38,10 +40,12 @@ export async function GET() {
       databaseUrl: process.env.DATABASE_URL ? 'Set' : 'Not set'
     }, { status: 500 });
   } finally {
-    try {
-      await prisma.$disconnect();
-    } catch (disconnectError) {
-      console.error('Error disconnecting:', disconnectError);
+    if (process.env.NODE_ENV === 'production') {
+      try {
+        await prisma.$disconnect();
+      } catch (disconnectError) {
+        console.error('Error disconnecting:', disconnectError);
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '@/db/client';
+import getPrismaClient from '@/db/client';
 
 export async function POST(req: NextRequest) {
+  const prisma = getPrismaClient();
+  
   try {
     console.log('Appointment POST request received');
     console.log('Environment:', process.env.NODE_ENV);
@@ -26,7 +28,7 @@ export async function POST(req: NextRequest) {
 
     console.log('Creating appointment...');
 
-    // Create new appointment without explicit connect/disconnect
+    // Create new appointment
     const appointment = await prisma.appointment.create({
       data: {
         fullName,
@@ -51,10 +53,16 @@ export async function POST(req: NextRequest) {
       error: 'Failed to create appointment',
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
+  } finally {
+    if (process.env.NODE_ENV === 'production') {
+      await prisma.$disconnect();
+    }
   }
 }
 
 export async function GET() {
+  const prisma = getPrismaClient();
+  
   try {
     console.log('Fetching appointments...');
     
@@ -74,5 +82,9 @@ export async function GET() {
       error: 'Failed to fetch appointments',
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
+  } finally {
+    if (process.env.NODE_ENV === 'production') {
+      await prisma.$disconnect();
+    }
   }
 }

@@ -15,10 +15,17 @@ const createPrismaClient = () => {
   });
 };
 
-const prisma = globalThis.prisma || createPrismaClient();
+// Create a new instance for each request in production to avoid prepared statement conflicts
+const getPrismaClient = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return createPrismaClient();
+  }
+  
+  if (!globalThis.prisma) {
+    globalThis.prisma = createPrismaClient();
+  }
+  
+  return globalThis.prisma;
+};
 
-if (process.env.NODE_ENV !== 'production') {
-  globalThis.prisma = prisma;
-}
-
-export default prisma;
+export default getPrismaClient;

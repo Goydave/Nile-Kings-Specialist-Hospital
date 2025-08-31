@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/db/client';
+import getPrismaClient from '@/db/client';
 
 export async function GET() {
+  const prisma = getPrismaClient();
+  
   try {
     // Test database connection
     await prisma.$connect();
@@ -26,6 +28,8 @@ export async function GET() {
       environment: process.env.NODE_ENV,
     }, { status: 500 });
   } finally {
-    await prisma.$disconnect();
+    if (process.env.NODE_ENV === 'production') {
+      await prisma.$disconnect();
+    }
   }
 }
