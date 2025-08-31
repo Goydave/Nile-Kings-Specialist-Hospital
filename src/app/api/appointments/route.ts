@@ -24,11 +24,9 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    console.log('Connecting to database...');
-    await prisma.$connect();
-    console.log('Database connected successfully');
+    console.log('Creating appointment...');
 
-    // Create new appointment
+    // Create new appointment without explicit connect/disconnect
     const appointment = await prisma.appointment.create({
       data: {
         fullName,
@@ -53,20 +51,12 @@ export async function POST(req: NextRequest) {
       error: 'Failed to create appointment',
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
-  } finally {
-    try {
-      await prisma.$disconnect();
-    } catch (disconnectError) {
-      console.error('Error disconnecting from database:', disconnectError);
-    }
   }
 }
 
 export async function GET() {
   try {
     console.log('Fetching appointments...');
-    await prisma.$connect();
-    console.log('Database connected for fetching appointments');
     
     const appointments = await prisma.appointment.findMany({
       orderBy: { createdAt: 'desc' },
@@ -84,7 +74,5 @@ export async function GET() {
       error: 'Failed to fetch appointments',
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }

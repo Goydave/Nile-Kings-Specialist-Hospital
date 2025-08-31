@@ -11,7 +11,7 @@ const createPrismaClient = () => {
         url: process.env.DATABASE_URL,
       },
     },
-    log: ['query', 'error', 'warn'],
+    log: ['error', 'warn'],
   });
 };
 
