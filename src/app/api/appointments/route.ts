@@ -28,22 +28,31 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    console.log('Creating appointment with write client...');
+    console.log('Creating appointment with raw SQL...');
 
-    // Create new appointment using write client
-    const appointment = await writePrisma.appointment.create({
-      data: {
+    // Use raw SQL to bypass prepared statement conflicts
+    const result = await writePrisma.$executeRaw`
+      INSERT INTO "Appointment" ("fullName", "email", "phone", "department", "doctor", "date", "reason", "createdAt")
+      VALUES (${fullName}, ${email}, ${phone}, ${department}, ${doctor}, ${new Date(date)}, ${reason}, NOW())
+    `;
+
+    console.log('Appointment created successfully with raw SQL');
+    
+    // Fetch the created appointment to return it
+    const appointment = await writePrisma.appointment.findFirst({
+      where: {
         fullName,
         email,
         phone,
         department,
         doctor,
-        date: new Date(date), // make sure frontend sends ISO string
         reason,
       },
+      orderBy: {
+        createdAt: 'desc'
+      }
     });
 
-    console.log('Appointment created successfully:', appointment.id);
     return NextResponse.json(appointment, { status: 201 });
   } catch (error) {
     console.error('Error creating appointment:', error);
@@ -84,8 +93,7 @@ export async function GET() {
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   } finally {
-    if (process.env.NODE_ENV === 'production') {
-      await readPrisma.$disconnect();
-    }
+    // Always disconnect read client
+    await readPrisma.$disconnect();
   }
 }

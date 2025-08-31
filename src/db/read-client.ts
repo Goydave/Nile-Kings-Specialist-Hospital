@@ -15,19 +15,9 @@ const createReadPrismaClient = () => {
   });
 };
 
-// Use singleton for read operations to maintain connection efficiency
+// Always create a fresh client to avoid prepared statement conflicts
 const getReadPrismaClient = () => {
-  if (process.env.NODE_ENV === 'production') {
-    // In production, create a new client for each request to avoid conflicts
-    return createReadPrismaClient();
-  }
-  
-  // Use singleton in development
-  if (!globalThis.readPrisma) {
-    globalThis.readPrisma = createReadPrismaClient();
-  }
-  
-  return globalThis.readPrisma;
+  return createReadPrismaClient();
 };
 
 export default getReadPrismaClient;

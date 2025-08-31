@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server';
-import getPrismaClient from '@/db/client';
+import getReadPrismaClient from '@/db/read-client';
 
 export async function GET() {
-  const prisma = getPrismaClient();
+  const readPrisma = getReadPrismaClient();
   
   try {
     // Test database connection
-    await prisma.$connect();
+    await readPrisma.$connect();
     
     // Try to count appointments
-    const count = await prisma.appointment.count();
+    const count = await readPrisma.appointment.count();
     
     return NextResponse.json({ 
       status: 'success', 
@@ -25,8 +25,7 @@ export async function GET() {
       error: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   } finally {
-    if (process.env.NODE_ENV === 'production') {
-      await prisma.$disconnect();
-    }
+    // Always disconnect read client
+    await readPrisma.$disconnect();
   }
 }
